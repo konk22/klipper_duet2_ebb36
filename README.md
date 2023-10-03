@@ -46,9 +46,9 @@
     python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u {ВСТАВЛЯЕМ UUID}
     ```
 
-# Для подготовки к работе и прошивки MCU EBB36+U2C необходимо:  
+# Для подготовки к работе и прошивки MCU EBB36+U2Cv2.1 необходимо:  
 
-**1. ПРИ НЕОБХОДИМОСТИ (обычно не нужно) подключаем U2C через usb к raspberry pi с зажатой кнопкой boot, после подключения отпускаем кнопку:**  
+**1. ПРИ НЕОБХОДИМОСТИ (обычно не нужно) подключаем U2Cv2.1 через usb к raspberry pi с зажатой кнопкой boot, после подключения отпускаем кнопку:**  
    - скачиваем прошивку под свой процессор:  
      ```bash
      wget -P ~/ https://github.com/bigtreetech/U2C/blob/master/firmware/{ВСТАВИТЬ НЕОБХОДИМЫЙ ФАЙЛ ПРОШИВКИ}
@@ -93,8 +93,8 @@
      sudo dfu-util -a 0 -D ~/katapult/katapult.bin --dfuse-address 0x08000000:force:mass-erase:leave -d {ВСТАВИТЬ ID ИЗ КОМАНДЫ lsusb}
      ```  
    - отключаем EBB36 от USB;  
-   - соединяем U2C и EBB36 проводами CAN;  
-   - подключаем U2C к USB. Если питание 24в в U2C не подключено или EBB36 подключен к U2C только проводами CAN(без питания), то подаем питание EBB36 через любой USB;  
+   - соединяем U2Cv2.1 и EBB36 проводами CAN;  
+   - подключаем U2Cv2.1 к USB. Если питание 24в в U2Cv2.1 не подключено или EBB36 подключен к U2Cv2.1 только проводами CAN(без питания), то подаем питание EBB36 через любой USB;  
    - создаем CAN устройство в klipper:  
      ```bash
      sudo nano /etc/network/interfaces.d/can0
