@@ -40,11 +40,11 @@
      (1000000) CAN bus speed
      ()  GPIO pins to set at micro-controller startup (NEW)
      ```  
-    - выходим, сохраняем, выходим из KIAUH;  
-    - прошиваем EBB36 прошивкой klipper:  
-      ```bash
-      python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u {ВСТАВЛЯЕМ UUID}
-      ```
+  - выходим, сохраняем, выходим из KIAUH;  
+  - прошиваем EBB36 прошивкой klipper:  
+    ```bash
+    python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u {ВСТАВЛЯЕМ UUID}
+    ```
 
 # Для подготовки к работе и прошивки MCU EBB36+U2C необходимо:  
 
@@ -56,7 +56,8 @@
          Bus 001 Device 005: ID 0483:df11 STMicroelectronics STM Device in DFU Mode
      sudo dfu-util -a 0 -D ~/{ВСТАВИТЬ СКАЧАННЫЙ ФАЙЛ ПРОШИВКИ} --dfuse-address 0x08000000:force:mass-erase:leave -d {ВСТАВИТЬ ID ИЗ КОМАНДЫ lsusb}
      ```  
-    - начинается прошивка, ждем строку ```File Downloaded Sucessfully```;  
+   - начинается прошивка, ждем строку ```File Downloaded Sucessfully```;  
+   
 **2. Подключаем EBB36 через usb к raspberry pi, зажимаем кнопку ```boot```, затем кликаем кнопку ```reset``` и отпускаем ```boot```(необходимо поставить перемычку для питания EBB36 от USB):**  
    - скачиваем katapult:  
      ```bash
